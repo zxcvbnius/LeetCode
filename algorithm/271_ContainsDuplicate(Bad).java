@@ -2,6 +2,8 @@
  * Given a non-empty array of integers, return the third maximum number in this array. 
  * If it does not exist, return the maximum number. The time complexity must be in O(n).
  * Result. "Your runtime beats 21.82% of java submissions :("
+ * Because HashMap.get() => Time Complexity is O(N)
+ * Quicksort have better time complexity then Map O(NlogN)
  */
 public class Solution {
     public boolean containsDuplicate(int[] nums) {
