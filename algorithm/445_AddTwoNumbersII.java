@@ -3,7 +3,7 @@
  * The most significant digit comes first and each of their nodes contain a single digit. 
  * Add the two numbers and return it as a linked list.
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
- * Result. "Your runtime beats  45.95% of java submissions"
+ * Result. "Your runtime beats  45.95%v76.91% of java submissions"
  */
  /**
  * Definition for singly-linked list.
@@ -13,6 +13,8 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+// Space Complexity: O(1)
  class LenListNode {
      int len;
      ListNode node;
