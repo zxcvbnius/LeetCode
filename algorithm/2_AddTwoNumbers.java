@@ -8,7 +8,7 @@
  */
  
  
- // Sol1, Result. "Your runtime beats  4.40% of java submissions :/"
+ // Sol1, Result. "Your runtime beats  4.40% or 53.48% of java submissions :/"
  public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
