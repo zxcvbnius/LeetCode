@@ -61,3 +61,32 @@
         if(i < right) quicksort(nums, i, right);
     }
 }
+
+
+// Sol2, not using quicksort
+public class Solution {
+    
+    private List<List<Integer>> res = new ArrayList<>();
+    
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        
+        if(candidates == null) return res;
+        getCombinations(candidates, target, 0, new ArrayList<>(), 0);
+        
+        return res;
+    }
+    
+    public void getCombinations(int[] nums, int target, int curSum, List<Integer> curList, int start) {
+        
+        if(curSum == target) {
+            ArrayList<Integer> newList = new ArrayList<>(curList);
+            res.add(newList);
+        } else if( curSum < target) {
+            for(int i = start ; i < nums.length ; i++) {
+                curList.add(nums[i]);
+                getCombinations(nums, target, curSum + nums[i], curList, i);
+                curList.remove( curList.size() - 1);
+            }
+        }
+    }
+}
