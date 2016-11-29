@@ -15,6 +15,8 @@
  * 
  * Result. "Your runtime beats 30.33% of java submissions."
  */
+
+// Or you can remove quicksort, it would accept!!
  public class Solution {
     
     private List<List<Integer>> res = new ArrayList<>();
