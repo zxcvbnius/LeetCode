@@ -14,10 +14,25 @@
  *        ↑   ↑
  * 
  * The above arrows point to positions where the corresponding bits are different.
- * Result: Result. "Your runtime beats 31% of java submissions." 
  **/
 
+// Result: Result. "Your runtime beats 51.9% of java submissions." 
+public class Solution {
+    public int hammingDistance(int x, int y) {
+        
+        /*long res = x^y; // very slowly "Your runtime beats 19% of java submissions."
+		int count = 0;
+		while(res > 0) {
+			if( res % 2 == 1) count++;
+			res = res >> 1;
+		}
+		return 0;*/
+        
+		return Integer.bitCount(x ^ y);
+    }
+}
 
+// Result: Result. "Your runtime beats 31% of java submissions." 
 public class Solution {
     public int hammingDistance(int x, int y) {
         int xlen = 0, ylen = 0;
