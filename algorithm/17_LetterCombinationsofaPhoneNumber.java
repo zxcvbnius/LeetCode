@@ -4,7 +4,7 @@
  * Input:Digit string "23"
  * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
  * 
- * Result. "Your runtime beats 50.37% of java submissions."
+ * Result. "Your runtime beats 50.37% v 90.37% of java submissions."
  */
  public class Solution {
     public List<String> letterCombinations(String digits) {
