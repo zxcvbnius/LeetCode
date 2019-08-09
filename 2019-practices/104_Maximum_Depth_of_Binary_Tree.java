@@ -9,19 +9,14 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        if(root == null) return 0;
-        int max_dep = find_depth(root, 1);
-        return max_dep;
+        int depth = dfs(root, 0);
+        return depth;
     }
     
-    public int find_depth(TreeNode node, int current_dep) {
-        if(node == null) return current_dep;
-        // leaf
-        if(node.left == null && node.right == null) return current_dep;
-        
-        int left_dep = find_depth(node.left, current_dep + 1);
-        int right_dep = find_depth(node.right, current_dep + 1);
-
-        return Math.max(left_dep, right_dep);
+    public int dfs(TreeNode node, int depth) {
+        if( node == null) return depth;
+        int left = dfs(node.left, depth);
+        int right = dfs(node.right, depth);
+        return Math.max(left, right) + 1;
     }
 }
