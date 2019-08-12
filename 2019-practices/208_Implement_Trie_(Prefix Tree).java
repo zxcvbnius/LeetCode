@@ -10,9 +10,11 @@ class Trie {
     }
     
     public TrieNode findNode(char[] wChars, TrieNode root) {
+        if(root == null) return null;
+
         int len = wChars.length;
 
-        for(int i = 1 ; i < len ; i++) { // start from children
+        for(int i = 0 ; i < len ; i++) { // start from children
             char ch = wChars[i];
             if( root.children[ ch - 'a' ] == null ) return null;
             root = root.children[ ch - 'a'];
@@ -20,12 +22,11 @@ class Trie {
         
         return root;
     }
-    
-    HashMap<Character, TrieNode> map = new HashMap<>();
 
     /** Initialize your data structure here. */
+    private TrieNode root = null;
     public Trie() {
-        
+        this.root = new TrieNode(' ');
     }
     
     /** Inserts a word into the trie. */
@@ -35,10 +36,9 @@ class Trie {
         char[] words = word.toCharArray();
         int size = words.length;
 
-        if( !map.containsKey( words[0] ) ) map.put( words[0], new TrieNode(words[0]) );
-        TrieNode node = map.get( words[0] );
+        TrieNode node = this.root;
 
-        for(int i = 1 ; i < size ; i++) {
+        for(int i = 0 ; i < size ; i++) {
             char ch = words[i];
         
             if( node.children[ ch - 'a' ] == null) node.children[ ch - 'a' ] = new TrieNode( ch );
@@ -52,10 +52,7 @@ class Trie {
         if(word == null) return false;
         char[] wChars = word.toCharArray();
 
-        if( !map.containsKey( wChars[0]) ) return false;
-        
-        TrieNode root = map.get( wChars[0] );
-        TrieNode node = findNode(wChars, root);
+        TrieNode node = findNode(wChars, this.root);
         return node != null && node.is_word;
     }
     
@@ -63,11 +60,7 @@ class Trie {
     public boolean startsWith(String prefix) {
         if(prefix == null) return false;
         char[] wChars = prefix.toCharArray();
-        
-        if( !map.containsKey( wChars[0]) ) return false;
-
-        TrieNode root = map.get( wChars[0] );
-        TrieNode node = findNode(wChars, root);
+        TrieNode node = findNode(wChars, this.root);
         return node != null;
     }
 }
